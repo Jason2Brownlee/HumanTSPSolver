@@ -25,7 +25,7 @@ The website was developed using an early version of Ruby on Rails an was hosted 
 
 The interaction with the fragments of traveling salesman problems was managed via Java applets with a graphical interface.
 
-Partial solutions were collected into a mysql database.
+Partial solutions were collected into a MySQL database.
 
 ### Screenshot
 
@@ -35,12 +35,12 @@ Partial solutions were collected into a mysql database.
 
 ### Website and Database
 
-A backup of the ruby on rails website and msqsql database was collected before the project was shutdown, circa May 2009.
+A backup of the ruby on rails website and MySQL database was collected before the project was shutdown, circa May 2009.
 
 * [humantspsolver-final.zip](code/humantspsolver-final.zip)
 	* [humantspsolver-final](code/humantspsolver-final/)
 
-An earlier backup of the website wade circa Decemner 2008
+An earlier backup of the website wade circa December 2008
 
 * [solver-20081220.zip](code/solver-20081220.zip)
 	* [solver](code/solver/)
