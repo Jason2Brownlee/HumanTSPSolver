@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>humanTSPsolver.com</title>
+  <%= stylesheet_link_tag 'solver' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body <%= " onload='#{@onload}'"%>> 
+<table id="maincontent" align="center">	
+<tr>
+	<td>	
+		<div id="titlesection" onclick="location.href='<%= root_url %>';" style="cursor:pointer;">
+			<div id="maintitle">
+				Human TSP Solver
+				<span id="maintitlebeta">BETA v0.4</span>
+			</div>
+			<div id="subtitle">Crowdsourcing the Travelling Salesman Problem</div>
+		</div>		
+		<div id="nav-main">
+			<table width="100%">
+				<tr>
+					<td align="left"><%= render :partial => "/layouts/current_instance" %></td>
+					<td align="right"><%= render :partial => "/layouts/user_login" %>	</td>
+				</tr>
+			</table>
+		</div>
+		<div style="color: green; text-align: center;">			
+			<%= flash[:message] %>
+			<%= flash[:warning] %>
+			<%= flash[:notice] %>
+		</div>
+
+		<%= yield  %>
+	</td>
+</tr>
+<tr>
+	<td align="center">
+		<br/>
+		<%= link_to 'Problems', problems_path %> |
+		<%= link_to 'Solutions', solutions_path %>
+	</td>
+</tr>
+</table>
+		<p>
+		<div id="footersection">
+			<%= link_to 'Home', root_path %> |
+			<%= link_to 'About', :controller => 'home', :action => 'about' %> |
+			<%= link_to 'Feedback', :controller => 'home', :action => 'feedback' %>
+		</div>	
+		</p>
+		<p align="center">
+			<font size=-2>
+			Ruby on Rails Hosting by <%= link_to 'HostingRails', 'http://www.hostingrails.com/home/2805716914' %>
+			<br/>
+			&copy;2008 <%= mail_to 'feedback@humanTSPsolver.com', 'Jason Brownlee' %>
+			</font>		
+		</p>
+		
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            var pageTracker = _gat._getTracker("UA-4428874-1");
+            pageTracker._initData();
+            pageTracker._trackPageview();
+        </script>	
+</body>
+</html>

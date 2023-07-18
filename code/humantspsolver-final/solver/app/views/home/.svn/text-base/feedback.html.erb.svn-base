@@ -1,0 +1,66 @@
+<h2>Feedback</h2>
+
+<p align="center">
+<span style="background: #FFFEE5; text-align:center; font-weight:bold; font-size: 18px;">
+	Let Us Know What You Think!
+</span>
+</p>
+
+<h3>Send us a Message</h3>
+<p>
+	You can send us a message directly by filling out and submitting the following form:
+</p>
+
+<% form_tag :action => 'feedback' do -%>
+	<table align="center">
+		
+		<% if(user=current_user)==nil -%>
+		<tr>			
+			<td><label for="feedback_name">Name</label>:</td>
+			<td>
+				<%= text_field "feedback", "name" %>
+			</td>
+		</tr>				
+		<tr>			
+			<td><label for="feedback_email">Email</label>:</td>
+			<td>
+				<%= text_field "feedback", "email" %>
+			</td>
+		</tr>			
+		<% else -%>
+			<tr>			
+				<td><label for="feedback_name">Name</label>:</td>
+				<td>
+					<%= text_field "feedback", "name", :value => user.login %>
+				</td>
+			</tr>				
+			<tr>			
+				<td><label for="feedback_email">Email</label>:</td>
+				<td>
+					<%= text_field "feedback", "email", :value => user.email %>
+				</td>
+			</tr>				
+		<% end -%>
+		
+		<tr>
+			<td><label for="feedback_msg">Message</label>:</td>
+			<td>
+				<%= text_area "feedback", "msg", :cols => 40, :rows =>10 %>
+			</td>
+		</tr>
+				
+		<tr>
+			<td></td>
+			<td><%= submit_tag 'Send' %></td>
+		</tr>				
+	</table>	
+<% end -%>
+
+
+<h3>Send us an Email</h3>
+<p>
+	You can contact us via the following email address: 
+	<a href="mailto:feedback@humanTSPsolver.com">feedback@humanTSPsolver.com</A>
+</p>
+
+

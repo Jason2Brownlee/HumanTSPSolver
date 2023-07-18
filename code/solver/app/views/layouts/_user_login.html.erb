@@ -1,0 +1,10 @@
+<% if((user = session[:user]) != nil)  -%>		
+	<%= link_to user.login, :controller => 'users', :action => 'profile' %>
+	<% score=user.current_score %>
+	<span id="level-<%= user.experience_level(score) %>">(<%= score %>)</span>
+	|
+	(<%= link_to 'Logout', :controller => 'users', :action => 'logout' %>)	
+<% else -%>
+	<%= link_to 'Login', :controller => 'users', :action => 'login' %> |
+	<%= link_to 'Sign up', :controller => 'users', :action => 'signup' %>
+<% end -%>

@@ -1,0 +1,21 @@
+<h2>Crowdsourced Solution: <%= link_to @instance.problem.name, @instance.problem %></h2>
+
+<%= render :partial => 'holistic_applet' %>	
+
+
+<center>
+<p>
+	<div id="difficulty-<%= @instance.problem.difficulty %>">
+       Crowdsourced solution to the <%= @instance.problem.difficulty %> difficulty 
+	   <%= link_to @instance.problem.name, @instance.problem %> TSP. 
+	   <br/>
+	   Started on  <%=h @instance.start_date.strftime '%A %B %d, %Y' %> and
+		comprised of <b><%= @instance.histories.sum(:count) %></b> contributions 
+		on <b><%= @instance.histories.count %></b> distinct edges.
+    </div>
+</p>
+</center>
+
+<br/>
+<%= render :partial => 'home/mini_leaderboard', :locals => 
+	{:title => 'Top Contributors', :user_list => User.users_best_for_instance(@instance, 10)} %>	

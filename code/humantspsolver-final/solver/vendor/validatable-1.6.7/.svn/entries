@@ -1,0 +1,58 @@
+8
+
+dir
+25
+file:///home/humants/svn/solver/trunk/vendor/validatable-1.6.7
+file:///home/humants/svn/solver
+
+
+
+2008-05-18T01:16:09.347261Z
+1
+humants
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+360e9199-529c-4bc5-bfae-86120d86a7fe
+
+test
+dir
+
+rakefile.rb
+file
+
+
+
+
+2008-05-18T01:18:35.000000Z
+c95a1f91c6e621dc6e7c137347b1f0f4
+2008-05-18T01:16:09.347261Z
+1
+humants
+
+lib
+dir
+
+README
+file
+
+
+
+
+2008-05-18T01:18:35.000000Z
+18c61c724b411c9f48184daba05645f0
+2008-05-18T01:16:09.347261Z
+1
+humants
+

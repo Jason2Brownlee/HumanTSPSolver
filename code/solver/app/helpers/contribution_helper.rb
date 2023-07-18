@@ -1,0 +1,3 @@
+module ContributionHelper
+  
+end

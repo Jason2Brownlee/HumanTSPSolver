@@ -1,0 +1,21 @@
+<h2>Optimal Tour Edges: <%= @problem.name %></h2>
+
+<table width="100%">
+  <tr>  	
+    <th>City From</th>
+    <th>City To</th>
+  </tr>
+
+<% for ot in @optimal_tours %>
+  <tr align="center">
+    <td><%=h ot.city_from %></td>
+    <td><%=h ot.city_to %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+<div align="center"> 
+	<%= link_to 'Problem Details', @problem %>
+</div>
+

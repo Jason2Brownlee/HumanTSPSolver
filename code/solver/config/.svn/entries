@@ -1,0 +1,82 @@
+8
+
+dir
+25
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solver/trunk/config
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solver
+
+
+
+2008-06-24T03:34:18.032539Z
+25
+humants
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+360e9199-529c-4bc5-bfae-86120d86a7fe
+
+routes.rb
+file
+
+
+
+
+2008-07-03T06:22:14.000000Z
+e6cd62b1eb64ef15b9da5a91bc586fa4
+2008-06-24T03:34:18.032539Z
+25
+humants
+
+database.yml
+file
+
+
+
+
+2008-07-03T06:22:14.000000Z
+3a4079d1c9a3eba93f59a4d33ecd0e2e
+2008-05-18T01:16:09.347261Z
+1
+humants
+
+boot.rb
+file
+
+
+
+
+2008-07-03T06:22:14.000000Z
+62fe46fd028f9df081e4ec9eb85968c0
+2008-05-18T01:16:09.347261Z
+1
+humants
+
+initializers
+dir
+
+environment.rb
+file
+
+
+
+
+2008-07-03T06:22:14.000000Z
+d1e2a4f55eca070e056f132d3a8ef5ec
+2008-05-18T01:16:09.347261Z
+1
+humants
+
+environments
+dir
+

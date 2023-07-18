@@ -1,0 +1,82 @@
+<!-- 
+SolverApplet
+-->
+<project name="Solver" default="dist" basedir=".">
+    <description>
+        Solver ant build file
+    </description>	
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+  <property name="applet"  value="solver"/>
+  <property name="ver" value="1.0"/>
+  <property name="build.compiler" location="javac1.2"/>
+ 
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+  </target>
+  	
+  <target name="clean" depends="init"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  	<delete dir="${dist}/${DSTAMP}-source"/>
+  	<delete dir="${dist}/${DSTAMP}-javadoc"/>
+  </target>  	
+
+  <target name="compile" depends="init" description="compile the source " >
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>  	
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}" destdir="${build}" source="1.2" target="1.2" compiler="javac1.2"  />
+    <copy todir="${build}" >
+       <fileset dir="${src}">
+       	  <include name="META-INF/**"/>
+       </fileset>
+    </copy>
+  </target>
+
+  <target name="dist" depends="compile" description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}/${DSTAMP}"/>  	
+    <!-- prepare the jar -->
+    <jar jarfile="${dist}/${DSTAMP}/${applet}.jar" basedir="${build}" manifest="${build}/META-INF/MANIFEST.MF"/>  	
+  </target>	
+	
+  <target name="javadoc" depends="dist" description="Create javadocs">
+        <mkdir dir="${dist}/${DSTAMP}-javadoc" />
+  	    <javadoc 
+  	    	access="public" 
+  	    	author="true"  
+  	    	destdir="${dist}/${DSTAMP}-javadoc"
+  	    	nodeprecated="false" 
+  	    	nodeprecatedlist="false" 
+  	    	noindex="false" 
+  	    	nonavbar="false" 
+  	    	notree="false" 
+  	    	packagenames="com.humantspsolver.*" 
+  	    	sourcepath="src" 
+  	    	splitindex="false" 
+  	    	use="false" 
+  	    	version="true"/>  	
+  </target>			
+	
+  <target name="source" depends="dist" description="prepare the source code for distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}/${DSTAMP}-source"/>
+  	<!-- copy everything we want over into the source directory -->
+    <copy todir="${dist}/${DSTAMP}-source" >
+       <fileset dir=".">
+       	<include name="src/**/*"/>
+       	<include name="readme.txt"/>
+       	<include name="build.xml"/>
+       </fileset>
+    </copy>
+    <!-- create the archive  -->
+  	<zip destfile="${dist}/${DSTAMP}/${applet}${ver}-src.zip" basedir="${dist}/${DSTAMP}-source"/>
+  </target>
+	
+</project>

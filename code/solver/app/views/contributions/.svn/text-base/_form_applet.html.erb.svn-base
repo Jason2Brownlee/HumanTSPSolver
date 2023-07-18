@@ -1,0 +1,64 @@
+<div id="contribution">	
+	<applet name="applet"
+			code="com.humantspsolver.add.ContributionApplet"
+			archive="/java/solver.jar"
+			width="<%= applet_size() %>"
+			height="<%= applet_size() %>" >
+	        <param name=num_coords value=<%= @contributions.size %> >
+			<% @sub_problem.each_with_index do |c, index| %>
+				<param name=coord_num_<%= index %> value=<%= "#{c.city}:#{c.x}:#{c.y}" %> >
+			<% end %>			
+			<div id="errorExplanation">
+				<b>The Java Applet Could Not Be Displayed.</b> <br/>
+				Please download the the most recent version of Java from 
+				<a href="http://www.java.com">www.java.com</a>, and ensure Java is enabled in your browser.
+			</div>
+	</applet>
+</div>	
+
+<table cellpadding=0 cellspacing=0 align="center" width="55%">
+	<tr>
+		<td align="left">
+			<small> <b>Level: </b>
+				<span id="difficulty-easy"><%= link_to_if(!current_page?(:action => 'easy'), 'Ezy', :action => 'easy') %></span>
+				<span id="difficulty-moderate"><%= link_to_if(!current_page?(:action => 'moderate'), 'Med', :action => 'moderate') %></span>
+				<span id="difficulty-hard"><%= link_to_if(!current_page?(:action => 'hard'), 'Hrd', :action => 'hard') %></span>		
+			</small>			
+		</td>
+		<td align="center">
+			<small>(Right click for suggestion)</small>
+		</td>
+		<td align="right">
+			<small>
+				<%= render :partial => 'applet_size_controls' %>
+			</small>				
+		</td>
+	</tr>
+</table>
+		
+<p>
+<center>
+	<% form_tag( {:action => 'contribute'}, {:name => 'contributions_form'}) do %>
+		<% @contributions.each_with_index do |contribution, index| %>
+		   <% fields_for "contributions[#{index}]", contribution do |f| %>	     	
+				<%= f.hidden_field :from_city %> 
+			 	<%= f.hidden_field :to_city %>
+		   <% end %>
+		<% end %> 	
+	 	<%= hidden_field('cities', params[:cities] )%> 
+	   	<%= submit_tag 'Make Contribution!', :onclick => "return populateFromApplet();" %>	   		
+	<% end %>	
+</center>	
+</p>
+
+<script type="text/javascript" language="JavaScript">
+	//<![CDATA[
+	function populateFromApplet()
+	{
+		<% @contributions.each_with_index do |contribution, index| %>		
+			document.contributions_form.contributions_<%= index %>_from_city.value = document.applet.getEdgeFromCity(<%= index %>);
+			document.contributions_form.contributions_<%= index %>_to_city.value = document.applet.getEdgeToCity(<%= index %>);			
+		<% end %> 	
+	}	
+	//]]>
+</script>

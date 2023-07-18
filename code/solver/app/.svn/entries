@@ -1,0 +1,40 @@
+8
+
+dir
+25
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solver/trunk/app
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solver
+
+
+
+2008-06-24T03:33:07.110725Z
+24
+humants
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+360e9199-529c-4bc5-bfae-86120d86a7fe
+
+helpers
+dir
+
+models
+dir
+
+controllers
+dir
+
+views
+dir
+

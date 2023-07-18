@@ -1,0 +1,16 @@
+<h2>Administration: Uploads</h2>
+
+<p>
+	Provides an experimental interface for uploading TSP new problems 
+	in TSPLIB format, and optimal to existing problems in the database.
+</p>
+
+
+<ul>
+	<li>Upload a <%= link_to 'TSP Definition', :controller => 'upload', :action => 'problem' %></li>
+	<li>Upload a  <%= link_to 'TSP Optima', :controller => 'upload', :action => 'optima' %></li>
+</ul>
+
+<p align="center">
+	<%= link_to 'Administration', :controller => 'admin' %>
+</p>

@@ -1,0 +1,16 @@
+<table width="100%">
+	<tr>
+		<th>Solution</th>
+		<th>Problem</th>
+		<th>Date</th>
+		<th>Contributed Edges</th>		
+	</tr>
+	<% for contrib in @user.user_contributions %>
+		<tr align="center" id="difficulty-<%= contrib.instance.problem.difficulty %>">
+			<td><%= link_to 'Crowdsourced', :controller => 'solutions', :action => 'show', :id => contrib.instance_id %></td>
+			<td><%= link_to contrib.instance.problem.name, contrib.instance.problem %></td>
+			<td><%= contrib.instance.start_date.strftime('%B %d, %Y') %></td>			
+			<td><%= contrib.count %></td>
+		</tr>			
+	<% end %>
+</table>

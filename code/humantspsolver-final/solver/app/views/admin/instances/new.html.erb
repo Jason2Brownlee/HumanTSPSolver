@@ -1,0 +1,22 @@
+<h2>New Instance</h2>
+
+<%= error_messages_for :instance %>
+
+<% form_for([:admin, @instance]) do |f| %>
+<table>
+	<tr>
+		<td><b>Problem</b></td>
+		<td><%= collection_select(:instance, :problem_id, @problems, :id, :name) %></td>
+	</tr>
+	<tr>
+		<td><b>Start date</b></td>
+		<td><%= f.date_select :start_date %></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td><%= f.submit "Create" %></td>
+	</tr>		  
+</table>
+<% end %>
+
+<%= render :partial => "links" %>

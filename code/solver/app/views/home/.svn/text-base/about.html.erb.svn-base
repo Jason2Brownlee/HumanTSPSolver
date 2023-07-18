@@ -1,0 +1,115 @@
+<h2>About</h2>
+
+<h3>Travelling Salesman Problem</h3>
+<p>
+	The Travelling Salesman Problem (TSP) is a classical combinatorial problem that involves visiting each 
+	city once and minimising the overall tour length. The difficulty of the problem is that as the number 
+	of cities (n) increases, so does the number of possible tours from which the minimum must be selected (0.5*(n-1)!).	
+	(<a href="http://en.wikipedia.org/wiki/Travelling_salesman_problem"></>more</a>...)
+</p>
+
+<p>
+	Computational problems are organised into common classes of difficulty. Those problems that cannot be solved in
+	polynomial time are referred to as NP-hard and represent some of the hardest known computational problems.
+	The TSP belongs to a sub-set of NP-hard called NP-complete, highlighting the innate difficulty of the 
+	problem (<a href="http://en.wikipedia.org/wiki/NP-hard"></>more</a>...)		
+</p>
+
+<p>
+	The TSP is a well studied problem in computer science and there are many specialised resources on the web
+	dedicated to interested researches. TSPLIB provides a library of sample problems that may be used when
+	empirically investigating instances of the general class of problem. This site selected common
+	instances of the Euclidean TSP with known solutions from TSPLIB.	
+	(<a href="http://www.iwr.uni-heidelberg.de/groups/comopt/software/TSPLIB95/"></>more</a>...)	
+</p>
+
+<h3>Crowdsourcing</h3>
+<p>
+	Crowdsourcing is an outsourcing technique where a problem is partitioned into sub-problems
+	and assigned to a crowd of people for solving. The sub-solutions are then collected and aggregated 
+	back into a holistic solution. The web provides an popular platform for this form of problem solving.
+	(<a href="http://en.wikipedia.org/wiki/Crowdsourcing"></>more</a>...)	
+</p>
+
+<p>
+	A powerful application of the crowdsourcing model involves harnessing problem solving capabilities of humans
+	toward solving problems that are too difficult for computers. This approach has been used to address machine vision
+	and pattern	recognition problems and is referred to as Human Computation.
+	(<a href="http://en.wikipedia.org/wiki/Human_computation"></>more</a>...)
+</p>
+
+
+<h3>Human TSP Solver</h3>
+<p>
+	The site was built to investigate the question: 
+	<center>
+	<b>Can human spatial intelligence be harnessed to solve instances of the Travelling Salesman Problem?</b>
+	</center>
+</p>	
+
+<p>
+	The approach taken involves: 
+	(1) partitioning TSP instances into sub-problems, 
+	(2) allowing users to make contributions in the context of the sub-problems, and 
+	(3) aggregating the contributions into a holistic solution. 	
+	A database of problems is maintained, and contributions are recorded against instances of those problems,
+	where an instances are rotated periodically.
+</p>
+
+<p>
+	Sub-problems are selected randomly with re-selection of sub-problems. The process involves 
+	firstly the selection of a random city in the broader problem, then the selection of a limited 
+	number of cities with a minimum distance to the selected origin city.
+</p>
+
+<p>
+	Contributions are provided by users in the form of edges between cities in presented sub-problems.
+	There is no discrimination of of contributions, meaning that users are free to contribute 
+	whatever they feel may be relevant or useful to the problem .
+	Contributions are aggregated and stored as a frequency for each distinct edge in an 
+	incidence adjacency list.
+</p>
+
+<p>
+	The stored contributions provide a summary of those edges that are expected to be useful in solving
+	the broader TSP (far fewer than the possible set of edges). These may be explored by a deterministic or
+	probabilistic algorithm, or by the users themselves to provide a holistic solution to a problem instance. 
+</p>
+
+<h3>A New Frontier</h3>
+
+<p>	
+	This is an exciting project as there is vast potential and many unknowns in harnessing 
+	the collectively intelligent web toward addressing hard computational problems. 
+</p>
+
+<p>	
+	<b>We don't know what kind of contributions users will make, or what will 
+	emerge in terms of holistic solutions. </b> For example, you may be interested
+	in <a href="http://docs.lib.purdue.edu/jps/vol1/iss1/">this set of papers</a> on assessing human 
+	spatial intelligence toward solving instances of the TSP, highlighting the cognitive potential just 
+	waiting to be unlocked.
+</p>	
+<p>
+	<b>We don't even know the best way to use the collected data.</b>
+	This is an evolving application in an emerging field and we would appreciate any and 
+	all <%= link_to 'feedback and ideas', :controller => 'home', :action => 'feedback' %>
+	you may have to offer!	
+</p>
+
+<h3>Conversations</h3>
+<p>
+	Conversations about the human TSP solver from <%= link_to 'my blog', 'http://www.neverreadpassively.com' %> and around the web:
+</p>
+<ul>
+	<li><%= link_to 'Crowdsourcing NP-Complete Problems', 'http://www.neverreadpassively.com/2008/04/crowdsourcing-np-complete-problems.html' %>, April 2008</li>
+	<li><%= link_to 'Considering User Experience in Crowdsourced Problem Solving', 'http://www.neverreadpassively.com/2008/04/considering-user-experience-in.html' %>, April 2008</li>
+	<li><%= link_to 'Connect The Dots: A Human-Based TSP Solver', 'http://www.neverreadpassively.com/2008/04/connect-dots-human-based-tsp-solver.html' %>, April 2008</li>
+	<li><%= link_to 'Human TSP Solver', 'http://www.neverreadpassively.com/2008/05/human-tsp-solver.html' %>, May 2008</li>
+	<li><%= link_to 'William Cook and the TSP @ Georgia Tech', 'http://www.neverreadpassively.com/2008/05/william-cook-and-tsp-georgia-tech.html' %>, May 2008</li>
+	<li><%= link_to 'TSPLIB: A Library of Standard TSP Instances', 'http://www.neverreadpassively.com/2008/05/tsplib-library-of-standard-tsp.html' %>, May 2008</li>
+	<li><%= link_to 'Human TSP Solvers and the Convex Hull Hypothesis', 'http://www.neverreadpassively.com/2008/05/human-tsp-solvers-and-convex-hull.html' %>, May 2008</li>
+	<li><%= link_to 'A Human TSP Solver in Rails, One Month On', 'http://www.neverreadpassively.com/2008/05/human-tsp-solver-in-rails-one-month-on.html' %>, May 2008</li>
+	<li><%= link_to 'Human Powered Databases: Some Lessons Learned', 'http://www.neverreadpassively.com/2008/06/human-powered-databases-some-lessons.html' %>, June 2008</li>
+	<li><%= link_to 'More Lessons Regarding Crowdsourcing', 'http://www.neverreadpassively.com/2008/06/more-lessons-regarding-crowdsourcing.html' %>, June 2008</li>
+</ul>

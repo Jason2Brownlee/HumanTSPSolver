@@ -1,0 +1,8 @@
+<h2>Human-Based Solver</h2>
+
+<%= render :partial => 'form_applet' %>	
+<br/>
+<%= render :partial => 'subproblem' %>	
+
+
+

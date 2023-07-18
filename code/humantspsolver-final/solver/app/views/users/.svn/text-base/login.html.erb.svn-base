@@ -1,0 +1,32 @@
+<h2>Login</h2>
+<p>
+	Logging in allows you to track all of the contributions you make across presented problem instances.
+</p>
+
+<% form_tag :action=> "login" do -%>
+	<table align="center">
+		<tr>
+			<td> <label for="user_login">Login</label>:</td>
+			<td>
+				<%= text_field "user", "login", :size => 20 %>
+				<small>(<%= link_to 'No Account?', :action => 'signup' %>)</small>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="user_password">Password</label>:</td>
+			<td>
+				<%= password_field "user", "password", :size => 20 %>
+				<small>(<%= link_to 'Forgot?', :action => 'forgot_password' %>)</small>					
+			</td>
+		</tr>		
+		
+		<tr>
+			<td></td>
+			<td><%= submit_tag "Submit" %></td>
+		</tr>				
+	</table>  
+<% end -%>
+
+<br/>
+
+

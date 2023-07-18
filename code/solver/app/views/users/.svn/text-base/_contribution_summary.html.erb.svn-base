@@ -1,0 +1,10 @@
+<table>
+	<tr>
+		<td><b>Problems: </b></td>
+		<td><%= @user.user_contributions.count %></td>
+	</tr>
+	<tr>
+		<td><b>Contributions: </b></td>
+		<td><%= @user.current_score %></td>
+	</tr>
+</table>

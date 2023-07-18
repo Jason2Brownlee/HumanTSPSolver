@@ -1,0 +1,40 @@
+8
+
+dir
+2
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solverapplet/trunk/src/META-INF
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solverapplet
+
+
+
+2008-06-23T23:53:00.528392Z
+1
+humants
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7b3db346-59f6-407c-93a2-06e9d98062d9
+
+MANIFEST.MF
+file
+
+
+
+
+2008-07-01T11:04:57.000000Z
+a1d8c9f974088fe7c8d6198f325490f0
+2008-06-23T23:53:00.528392Z
+1
+humants
+

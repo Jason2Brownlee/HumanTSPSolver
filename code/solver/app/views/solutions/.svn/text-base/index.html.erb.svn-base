@@ -1,0 +1,25 @@
+<h2>Crowdsourced Solutions</h2>
+<p>
+	There are <b><%= @instances.size %></b> crowdsourced TSP solutions.
+</p>
+
+<table width="100%">
+  <tr>    
+    <th>Solution</th>
+	<th>Problem</th>
+    <th>Date</th>	
+	<th>Contributions</th>		
+  </tr>
+
+<% for instance in @instances %>
+  <tr align="center"  id="difficulty-<%= instance.problem.difficulty %>">
+  	<td><%= link_to 'Crowdsourced', :controller => 'solutions', :action => 'show', :id => instance.id %></td>
+	<td><%= link_to instance.problem.name, instance.problem %></td>
+    <td><%= instance.start_date.strftime('%B %d, %Y') %></td>	    
+	<td><%=h instance.histories.sum(:count) %></td>    	
+  </tr>
+<% end %>
+</table>
+
+
+

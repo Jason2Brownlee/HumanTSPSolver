@@ -1,0 +1,12 @@
+<center>
+<p>
+	<div id="difficulty-<%= params[:cities] %>">
+        This is a <b><%= params[:cities] %></b> sized 
+        sub-problem with <b><%= @sub_problem.size %></b> cities.
+        <br/>
+		Solving sub-problems contributes to the 
+		<%= link_to 'larger problem', :controller => 'solutions' , :action => 'current' %>
+		and teaches the system about human spatial intelligence.
+    </div>
+</p>
+</center>

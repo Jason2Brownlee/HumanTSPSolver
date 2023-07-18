@@ -1,0 +1,67 @@
+8
+
+dir
+2
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solverapplet/trunk
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solverapplet
+
+
+
+2008-06-24T00:12:15.487000Z
+2
+humants
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7b3db346-59f6-407c-93a2-06e9d98062d9
+
+applet_test.html
+file
+
+
+
+
+2008-07-01T11:04:56.000000Z
+eb79df656930c535d05fdce052b2daf5
+2008-06-23T23:53:00.528392Z
+1
+humants
+
+build.xml
+file
+
+
+
+
+2008-07-01T11:05:04.000000Z
+b3daae6e6d906e096d5ef726f6b5b3b9
+2008-06-24T00:12:15.487000Z
+2
+humants
+
+readme.txt
+file
+
+
+
+
+2008-07-01T11:05:04.000000Z
+d4f8912d87fb34ca0730acbaf126a8ee
+2008-06-23T23:53:00.528392Z
+1
+humants
+
+src
+dir
+

@@ -1,0 +1,4 @@
+<b>Size: </b>
+<%= link_to_function('Sml', "return updateAppletSize('small')") %>
+<%= link_to_function('Med', "return updateAppletSize('medium')") %>
+<%= link_to_function('Lrg', "return updateAppletSize('large')") %>

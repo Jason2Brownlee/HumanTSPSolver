@@ -1,0 +1,56 @@
+<h2>Problem Details: <%=h @problem.name %></h2>
+
+<table>
+	<tr id="difficulty-<%= @problem.difficulty %>">
+		<td><b>Name: </b></td>
+		<td><%=h @problem.name %> </td>
+	</tr>
+	<tr>
+		<td><b>Difficulty: </b></td>
+		<td><%= @problem.difficulty %></td>
+	</tr>	
+	<tr>
+		<td><b>Type: </b></td>
+		<td><%=h @problem.edge_weight_type %></td>
+	</tr>		
+	<tr>
+		<td><b>Description: </b></td>
+		<td><%=h @problem.description %></td>
+	</tr>		
+	<tr>
+		<td><b>Cities: </b></td>
+		<td><%=h @problem.num_cities %></td>
+	</tr>
+			
+</table>
+
+<h3>Graph</h3>
+<p>
+	<%= render :partial => 'graph_applet' %>			
+</p>
+<p align="center">
+	<%= link_to 'List Coordinates', problem_coordinates_path(@problem) %> 
+	<% if @problem.has_optima? -%>
+		| <%= link_to 'List Optimal Edges', problem_optimal_tours_path(@problem) %> 
+	<% end -%>
+</p>
+
+<h3>Crowdsourced Solutions</h3>
+<% if(@problem.instances.count > 0) -%>
+	<table width="100%">
+		<tr>
+			<th>Solution</th>
+			<th>Date</th>
+			<th>Contributions</th>			
+		</tr>	
+		<% for instance in @problem.instances %>
+		  <tr align="center">
+		  	<td><%= link_to 'Crowdsourced', :controller => 'solutions', :action => 'show', :id => instance.id %></td>
+		    <td><%= instance.start_date.strftime('%B %d, %Y') %></td>
+		    <td><%=h instance.histories.sum(:count) %></td>			
+		  </tr>
+		<% end %>
+	</table>
+<% else -%>
+	There are no Crowdsourced Solutions to this problem.
+<% end -%>

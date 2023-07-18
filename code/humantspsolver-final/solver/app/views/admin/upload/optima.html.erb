@@ -1,0 +1,25 @@
+<h2>Administration: Uploads: Optima</h2>
+
+<p>
+	Upload an Optimal Tour for an existing TSP.
+</p>	
+
+
+<%= form_tag ({:action => 'uploadOptima'}, :multipart => true) %>
+<table>
+	<tr>
+		<td><label for="problem">Select Problem</label>:</td>
+		<td><%= collection_select(:problem, :id, @problems, :id, :name) %></td>
+	</tr>
+	<tr>
+		<td><label for="upload_file">Select File</label>:</td>
+		<td><%= file_field 'upload', 'datafile' %></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><%= submit_tag "Upload" %></td>
+	</tr>			
+</table>
+</form>
+
+<%= render :partial => "links" %>

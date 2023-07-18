@@ -1,0 +1,17 @@
+<h3 align="center"><%= title %></h3>
+<table width="100%">
+    <% user_list.each_with_index do |user, index| %>
+    <% level=User.calc_experience_level(Integer(user[:num_contributions])) %>
+    <tr id="level-<%= level %>">
+        <td align="center">
+            <%= (index + 1) %>
+        </td>
+        <td>
+            <%= link_to user[:login], :controller => 'users', :action => 'viewprofile', :id => user[:id] %>
+        </td>
+        <td align="center">
+            <%= user[:num_contributions] %>
+        </td>
+    </tr>
+    <% end %>
+</table>

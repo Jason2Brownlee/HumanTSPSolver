@@ -1,0 +1,52 @@
+8
+
+dir
+2
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solverapplet/trunk/src/com/humantspsolver/add
+svn+ssh://humants@humantspsolver.com/home/humants/svn/solverapplet
+
+
+
+2008-06-23T23:53:00.528392Z
+1
+humants
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7b3db346-59f6-407c-93a2-06e9d98062d9
+
+ContributionApplet.java
+file
+
+
+
+
+2008-07-01T11:04:59.000000Z
+76c5e02cf7123ee2a2b55c96152837e6
+2008-06-23T23:53:00.528392Z
+1
+humants
+
+ContributionTSPDisplay.java
+file
+
+
+
+
+2008-07-01T11:05:00.000000Z
+022002ae526d21563687b14a4d211c4d
+2008-06-23T23:53:00.528392Z
+1
+humants
+

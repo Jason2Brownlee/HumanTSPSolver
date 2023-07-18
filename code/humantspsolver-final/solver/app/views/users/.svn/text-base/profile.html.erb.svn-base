@@ -1,0 +1,9 @@
+<h2>User Profile: <%= @user.login%></h2>
+<%= render :partial => 'user_details', :locals => {:is_user => true} %>	
+
+<h3>Contributions Summary</h3>
+<%= render :partial => 'contribution_summary' %>
+	
+<h3>Contribution Details</h3>
+<%= render :partial => 'contributions' %>	
+

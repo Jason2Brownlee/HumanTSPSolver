@@ -1,0 +1,28 @@
+<div id="contribution">	
+	<center>
+	<applet name="applet"
+			code="com.humantspsolver.view.ViewApplet"
+			archive="/java/solver.jar"
+			width="<%= applet_size() %>" 
+			height="<%= applet_size() %>">
+	        <param name=num_coords value=<%= @problem.coordinates.count %> >
+			<% @problem.coordinates.each_with_index do |c, index| %>
+				<param name=coord_num_<%= index %> value=<%= "#{c.city}:#{c.x}:#{c.y}" %> >
+			<% end %>
+			<param name=num_contributions value=<%= @problem.optimal_tours.count %> >
+			<%  @problem.optimal_tours.each_with_index do |c, index| %>
+				<param name=contribution_num_<%= index %> value=<%= "#{c.city_from}:#{c.city_to}:1" %> >
+			<% end %>			
+			
+			<div id="errorExplanation">
+				<b>The Java Applet Could Not Be Displayed.</b> <br/>
+				Please download the the most recent version of Java from 
+				<a href="http://www.java.com">www.java.com</a>, and ensure Java is enabled in your browser.
+			</div>			
+	</applet>	
+	<br/>
+	<small>
+		<%= render :partial => 'contributions/applet_size_controls' %>
+	</small>
+	</center>
+</div>

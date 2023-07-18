@@ -1,0 +1,31 @@
+<h2>Travelling Salesman Problems</h2>
+
+<p>
+	There are <b><%= @problems.size %></b> Travelling Salesman Problems.
+</p>
+
+<table width="100%">
+  <tr>
+    <th>Name</th>
+	<th>Difficulty</th>
+    <th>Cities</th>	
+	<th>Solutions</th>
+  </tr>
+
+<% for problem in @problems %>
+  <tr id="difficulty-<%= problem.difficulty %>" align="center">
+    <td><%= link_to  problem.name, problem %></td>
+	<td><%=h problem.difficulty %></td>
+    <td><%=h problem.num_cities %></td>
+	<td>
+		<% if(num=problem.instances.count()) > 0 -%>
+			<%= num %>
+		<% else -%>
+			0
+		<% end -%>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+

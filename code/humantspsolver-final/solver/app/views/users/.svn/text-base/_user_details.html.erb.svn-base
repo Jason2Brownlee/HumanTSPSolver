@@ -1,0 +1,28 @@
+<%# Parameters: is_user%>
+
+<% level = @user.experience_level %>
+
+<table>
+	<tr id="level-<%= level %>">
+		<td><b>Login: </b></td>
+		<td><%= @user.login%></td>
+	</tr>
+	<tr>
+		<td><b>Join Date: </b></td>
+		<td><%= @user.created_at.strftime '%A %B %d, %Y' %></td>
+	</tr>	
+	<tr>
+		<td><b>Experience: </b></td>
+		<td><%= level %></td>
+	</tr>	
+	<% if(is_user) %>	
+	<tr>
+		<td><b>Email: </b></td>
+		<td><%= @user.email%></td>
+	</tr>				
+	<tr>
+		<td><b>Password: </b></td>
+		<td><%= link_to 'Change', :controller => 'users', :action => 'change_password' %></td>
+	</tr>		
+	<% end %>
+</table>

@@ -1,0 +1,37 @@
+<h2>Sign up</h2>
+
+<p>
+	Signing up gives you an account that allows you to track all of the contributions 
+	you make across presented problem instances.
+</p>
+
+<center>
+	<%= error_messages_for 'user' %><br/>
+</center>
+
+<% form_tag :action => "signup" do -%>
+	<table align="center">
+		<tr>
+			<td><label for="user_login">Username</label>:</td>
+			<td><%= text_field "user", "login", :size => 20 %></td>
+		</tr>
+		<tr>
+			<td><label for="user_password">Password</label>:</td>
+			<td><%= password_field "user", "password", :size => 20 %></td>
+		</tr>		
+		<tr>
+			<td><label for="user_password_confirmation">Password Confirmation</label>:</td>
+			<td><%= password_field "user", "password_confirmation", :size => 20 %></td>
+		</tr>
+		<tr>
+			<td><label for="user_email">Email</label>:</td>
+			<td><%= text_field "user", "email",  :size => 25 %></td>
+		</tr>			
+		<tr>
+			<td></td>
+			<td><%= submit_tag "Signup" %></td>
+		</tr>				
+	</table>	
+<% end -%>
+
+<br/>

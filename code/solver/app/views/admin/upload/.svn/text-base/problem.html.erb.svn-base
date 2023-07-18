@@ -1,0 +1,21 @@
+<h2>Administration: Uploads: Definition</h2>
+
+<p>
+	Upload a TSP definition in TSPLIB format.
+</p>	
+
+<%= form_tag ({:action => 'uploadProblem'}, :multipart => true) %>
+<table>
+	<tr>
+		<td><label for="upload_file">Select File</label>:</td>
+		<td><%= file_field 'upload', 'datafile' %></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><%= submit_tag "Upload" %></td>
+	</tr>
+</table>
+</form>
+
+
+<%= render :partial => "links" %>
