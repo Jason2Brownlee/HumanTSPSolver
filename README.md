@@ -27,6 +27,8 @@ The interaction with the fragments of traveling salesman problems was managed vi
 
 Partial solutions were collected into a mysql database.
 
+### Screenshot
+
 ![Screen Shot](ScreenShot.png)
 
 ## Code
